@@ -1,0 +1,50 @@
+header {
+	#bar{
+	    position:fixed;
+	    top: 38px;
+	    background-color: #2098d1;
+	    width:0;
+	    height:5px;
+	    z-index: 90000;
+	    transition: width 0.5s ease-in-out; 
+	}
+	#bar-back{
+	    position:fixed;
+	    top: 38px;
+	    background-color: #000;
+	    width: 100%;
+	    height:5px;
+	    z-index: 80000;
+	    transition: width 0.5s ease-in-out;
+	}
+}
+
+nav {
+	z-index: 10000;
+	width: 100%;
+	position: fixed;
+	a {
+		text-transform: uppercase;
+		width: calc(100% / 4);
+		background: #626262;
+		padding: 0.9em 1em;
+		float: left;
+		color: #fff;
+		font-size: 0.75em;
+		box-sizing: border-box;
+		border-right: 2px #2098d1 solid;
+		text-align: center;
+		text-decoration: none;
+		font-weight: 300;
+	}
+	a[href="#projects2"],
+	a[href="#projects3"],
+	a[href="#projects4"],
+	a[href="#projects5"] {
+		display: none;
+	}
+}
+.logo {
+	float: left;
+	background: #fff;
+}

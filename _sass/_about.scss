@@ -1,0 +1,58 @@
+section#about.profile-pic {
+		width: 100%;
+		height: 100%;
+		background: url('img/{{ site.data.settings.profile-img }}');
+		background-size: contain !important;
+		background-position: 0% bottom !important;
+		background-blend-mode: multiply;
+		background-color: $my-blue !important;
+		background-repeat: no-repeat !important;
+		@media only screen and (max-width: 760px){
+			background-image: none !important;
+		}
+
+		.mobile-pic {
+			border-radius: 50%;
+			background-size: cover !important;
+			background-blend-mode: multiply;
+			background-color: $my-blue !important;
+			width: 300px;
+			height: 300px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			background-position: center;
+			@media only screen and (min-width: 760px){
+				display: none !important;
+			}
+
+		}
+
+		div.about-me-description {
+		color: white;
+		width: 90%;
+		margin-top: 40px;
+		margin-left: auto;
+		margin-right: auto;
+		@media only screen and (min-width: 760px){
+			color: #fff;
+			width: 60%;
+			float: right;
+			margin-bottom: 0;
+			margin-right: 2em;
+		}
+			h2 {
+				margin: 0;
+				line-height: 1em;
+			}
+			h4 {
+			}
+			.about-subtitle {
+				font-weight: 400;
+			}
+			p {
+				strong {
+				}
+			}
+		}
+}

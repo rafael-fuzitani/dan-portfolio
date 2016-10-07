@@ -1,0 +1,94 @@
+section#reel {
+	background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAIElEQVQIW2NkYGD4zwABjFAazMAqCFMAp+FakGWwCgIAtpQCBvZ2xwcAAAAASUVORK5CYII=');
+	background-color: rgba(0, 0, 0, .7);
+	background-blend-mode: multiply;
+	// background-size: cover, auto;
+	div {
+		width: 100%;
+		color: #fff;
+		.my-shout-out {
+
+			h1.reel-call {
+				margin: 0;	
+				line-height: 1em;
+				@media only screen and (max-width: 600px){
+				    font-size: 4em;
+				}
+			}
+			h3 {
+				margin: 0;
+				line-height: 1.5em;
+				
+			}
+			h4 {
+				font-weight: 300;
+				font-size: 36px;
+				margin: 0;
+				
+			}
+		}
+
+		div.play-button {
+			padding: 1em;
+			width: 35vw;
+			border: 5px #fff solid;
+			margin-left: auto; 	
+			margin-right: auto; 
+			margin-top: 2em;
+			cursor: pointer; 
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.7);
+				fill: rgba(0, 0, 0, 0.5);
+				border: 5px $my-blue solid;
+				h4 {
+					color: $my-blue;
+				}
+			}
+			h4 {
+				font-weight: 300;
+				font-size: 1.25em;
+				margin: 0;
+			}
+		}
+	}
+	#overlay {
+		width:100vw; 
+		height:100vh; 
+		position:fixed; 
+		top:0; 
+		left:0; 
+		background-color:#333; 
+		z-index: 10000000; 
+		display:none;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;}
+		iframe {
+			position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    text-align: center;        
+			    width: 90vw;
+			    height: 95vh;
+			    margin-left: -45vw; /*half width*/
+			    margin-top: -47.5vh; /*half height*/
+		}
+		.close {
+		    color: white;
+		    position: absolute;
+		    top: 2.5%;
+		    right: 3%;
+		    font-size: 28px;
+		    font-weight: bold;
+		    z-index: 100000000;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: #000;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+
+}

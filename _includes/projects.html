@@ -1,0 +1,36 @@
+{% for project in site.data.settings.projects %}
+<section id="projects{{ forloop.index }}" class="section2">
+	<div class="proj-belt">
+	<div class="thumb-wrap" id="{{project.id}}" data-folder="{{ project.file }}" style="background: url({{project.folder}}/thumb.png);">
+		<div class="proj-calls-wrap">
+		    <h2>{{ project.name }}</h2>
+		    <h3>{{ project.sub-name }}</h3>
+		</div>
+	</div>
+	</div>
+	<div class="proj-wrap">
+		<h2 class="project-title"></h2>
+		<h3 class="project-sub-title"></h3>
+		<div class="project-load"></div>
+		<div class="close-proj">{% include icons/close.html %}</div>
+		<div class="close-button">close</div>
+
+	</div>
+</section>
+{% endfor %}
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.thumb-wrap').click(function(){
+			$('.proj-wrap').fadeIn(400);
+		})
+		$('.close-proj, .close-button').click(function(){
+			$('.proj-wrap').fadeOut(400);
+			player.unload().then(function() {
+					    // the video was unloaded
+					}).catch(function(error) {
+					    // an error occurred
+					});
+		})
+	});
+</script>
+

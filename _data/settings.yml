@@ -1,0 +1,26 @@
+projects:
+  - name: Caixa Econômica Federal
+    sub-name: Fabrica de Ilusões
+    folder: 'img/work/proj-1'
+    file: 'project-1.html'
+    id: proj-1
+    
+  - name: Signs of Autism
+    sub-name: Autism Speaks
+    folder: 'img/work/proj-2'
+    file: 'project-2.html'
+    id: proj-2
+
+  - name: McDonalds
+    sub-name: Books of Life
+    folder: 'img/work/proj-3'
+    file: 'project-3.html'
+    id: proj-3
+    
+  - name: Mizuno Wave Creation
+    sub-name: Run Run Run
+    folder: 'img/work/proj-4'
+    file: 'project-4.html'
+    id: proj-4
+    
+profile-img: profile_2016_square.jpg

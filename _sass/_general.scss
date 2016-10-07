@@ -1,0 +1,42 @@
+$my-blue: #4AA2A2;
+$my-dark-blue: #0A7272;
+$my-yellow: #C6A164;
+$my-grey: #626262;
+
+body {
+	font-family: 'Open Sans';
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 86px;
+	line-height: 70px;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 56px;
+	text-transform: uppercase;
+	@media only screen and (max-width: 760px){
+	    font-size: 24px;
+	}
+}
+
+h3 {
+	font-size: 36px;
+	text-transform: uppercase;
+	@media only screen and (max-width: 760px){
+	    font-size: 2em;
+	}
+}
+
+h4 {
+	font-size: 24px;
+	@media only screen and (max-width: 760px){
+	    font-size: 1em;
+	}
+}
+
+p {
+	font-weight: 300;
+}

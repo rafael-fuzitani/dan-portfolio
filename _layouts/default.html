@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include head.html %}
+<body>
+	{% include header.html %}
+	
+	<div class="horizontal">
+	    <div class="table">
+
+	    <a href="#section1" class="prev-section""></a>
+	      {% include home-reel.html %}
+	      {% include projects.html %}
+	      {% include about.html %}
+	      {% include contact.html %}
+
+	        <!-- Repeat this part as necessary. -->
+	      <a href="#projects1" class="next-section"></a>
+	    </div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>
