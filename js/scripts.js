@@ -154,7 +154,7 @@ $(document).ready(function() {
 	        		else if (nextSection == fullbarProject || nextSection == $('a.projects').eq(-1).attr('href') || nextSection == $('a.projects').last().attr('href') ) {
 	        			barIndex = 2;
 	        			nextSection = '#' + $('section#about').attr('id');
-	        			
+	        			$('nav a').removeClass('active');
 	        			$('a[href=#about]').addClass('active');
 	        			console.log('project full next is ' + nextSection);
 	        			$(this).attr('href', nextSection);
@@ -170,6 +170,13 @@ $(document).ready(function() {
 	        }
 	        console.log('desenha barras	');
 	        $('#bar').width(barUnit*(barIndex+1));
+
+	        //NavBar active projects (T_T)
+	        if($('a.projects').hasClass('active')){
+	        	$('nav a.projects').first().css('background-color', '#2098d1');
+	        }else {
+	        	$('nav a.projects').first().css('background-color', '#626262');
+	        }
 	    });
 
 
@@ -182,9 +189,9 @@ $(document).ready(function() {
 	                $(sections[i]).removeClass('active');//tira o active
 	            }
 	        }
+
 	        $(sections[activeIndex-1]).addClass('active');//coloca active na section anterior
-	        
-	        
+
 	        var prevSection = $('.active').attr('href');
 	        var nextSection = $('.active').next().attr('href');
 	        $(this).attr('href', prevSection);
@@ -204,10 +211,18 @@ $(document).ready(function() {
 	        if ( prevSection == '#reel') {
 	        	barIndex = 0; //força a barra ficar certa
 	        }
+
 	        else if ( prevSection == lastProject) {
 	        	barIndex = 1;
 	        }
 	        $('#bar').width(barUnit*(barIndex+1));
+
+	        //NavBar active projects (T_T)
+	        if($('a.projects').hasClass('active')){
+	        	$('nav a.projects').first().css('background-color', '#2098d1');
+	        }else {
+	        	$('nav a.projects').first().css('background-color', '#626262');
+	        }
 	    });
 
 	    $('nav > a').click(function(){
@@ -236,6 +251,7 @@ $(document).ready(function() {
 	    
 	    $('a.next-section, a.prev-section').smoothScroll();
 	}
+	
 
 });
 
