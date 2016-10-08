@@ -114,11 +114,14 @@ $(document).ready(function() {
 		var projNumber = $('.section2').length;
 		var projIndex = 1 / projNumber;
 		var activeIndex;
-		var barIndexMax = sections.length - 1;
+		var barIndexMax = sections.length - 4;
 		var barIndexMin = 0;
 		var barIndex = 0;
 		var barUnit = $(window).width() / (sections.length - (projNumber - 1));
 		console.log('fullbarProject ' + fullbarProject);
+
+
+		
 
 
 	    //NEXT ARROW
@@ -171,12 +174,8 @@ $(document).ready(function() {
 	        console.log('desenha barras	');
 	        $('#bar').width(barUnit*(barIndex+1));
 
-	        //NavBar active projects (T_T)
-	        if($('a.projects').hasClass('active')){
-	        	$('nav a.projects').first().css('background-color', '#2098d1');
-	        }else {
-	        	$('nav a.projects').first().css('background-color', '#626262');
-	        }
+	        
+	        console.log('barIndex =' + barIndex);
 	    });
 
 
@@ -196,6 +195,7 @@ $(document).ready(function() {
 	        var nextSection = $('.active').next().attr('href');
 	        $(this).attr('href', prevSection);
 	        $('.next-section').attr('href', nextSection);
+	    	$('.next-section').show(200);	        
 	        if(barIndex == barIndexMin) {
 	        	barIndex = barIndexMin;
 	        }
@@ -217,12 +217,9 @@ $(document).ready(function() {
 	        }
 	        $('#bar').width(barUnit*(barIndex+1));
 
-	        //NavBar active projects (T_T)
-	        if($('a.projects').hasClass('active')){
-	        	$('nav a.projects').first().css('background-color', '#2098d1');
-	        }else {
-	        	$('nav a.projects').first().css('background-color', '#626262');
-	        }
+	        console.log('barIndex =' + barIndex);
+
+	        
 	    });
 
 	    $('nav > a').click(function(){
@@ -233,7 +230,7 @@ $(document).ready(function() {
 	    		console.log('barIndex ' + barIndex);
 	    	}
 	    	else if ($('a[href^=#projects]').hasClass('active')) {
-	    		barIndex = projIndex;
+	    		barIndex = projIndex * projShown;
 	    		console.log('barIndex ' + barIndex);
 	    	}		
 	    	else if ($('a[href=#about]').hasClass('active')) {
@@ -247,6 +244,35 @@ $(document).ready(function() {
 	    	$('#bar').width(barUnit*(barIndex+1));
 	    });
 
+
+	    $('nav a, .prev-section, .next-section').click(function(){
+	    	//hide or show arrows
+	    	if($('nav a').first().hasClass('active')){
+	    	$('.prev-section').hide(200);
+	    	console.log('hide yourself');
+		    }
+		    else {
+		    	$('.prev-section').show(200);
+		    	console.log('Show your self prev');
+		    }
+
+		    if($('nav a').last().hasClass('active')){
+		    	$('.next-section').hide(200);
+		    }
+		    else {
+		    	$('.next-section').show(200);
+		    	console.log('Show your self next');
+		    }	
+
+
+		    //NavBar active projects (T_T)
+		    if($('a.projects').hasClass('active')){
+		    	$('nav a.projects').first().css('background-color', '#2098d1');
+		    }else {
+		    	$('nav a.projects').first().css('background-color', '#626262');
+		    }
+	    });
+	    
 
 	    
 	    $('a.next-section, a.prev-section').smoothScroll();
