@@ -110,7 +110,7 @@ $(document).ready(function() {
 		var sections = $('nav  a');
 		var firstProject = $('a.projects').first().attr('href');
 		var lastProject = $('a.projects').last().attr('href');
-		var fullbarProject = $('a.projects').eq(-2).attr('href');
+		var fullbarProject = $('a.projects').eq(-2).attr('href'); //third project which means the project bar should be full because all projects should be displayed by then
 		var projNumber = $('.section2').length;
 		var projIndex = 1 / projNumber;
 		var activeIndex;
@@ -148,7 +148,6 @@ $(document).ready(function() {
 	        	barIndex = barIndexMax;
 	        }
 	        else {
-	        	console.log('NEXT IS ' + nextSection, 'FIRST IS ' + firstProject);
 	        	if($('a[href^=#projects]').hasClass('active')){	
 	        		barIndex = barIndex + projIndex;
 	        		if (nextSection == firstProject) {
@@ -159,7 +158,6 @@ $(document).ready(function() {
 	        			nextSection = '#' + $('section#about').attr('id');
 	        			$('nav a').removeClass('active');
 	        			$('a[href=#about]').addClass('active');
-	        			console.log('project full next is ' + nextSection);
 	        			$(this).attr('href', nextSection);
 
 	        		}
@@ -202,6 +200,13 @@ $(document).ready(function() {
 	        else {
 	        	if($('a[href^=#projects]').hasClass('active')){
 	        		barIndex = barIndex - projIndex;
+	        		if(prevSection == $('a.projects').last().attr('href')){
+	        			barIndex = 1;
+	        			prevSection = '#' + $('section#projects2').attr('id');
+	        			$('nav a').removeClass('active');
+	        			$('a[href=#projects2]').addClass('active');
+	        			$(this).attr('href', prevSection);
+	        		}
 	        	}
 	        	else {
 	        		barIndex = barIndex - 1;
