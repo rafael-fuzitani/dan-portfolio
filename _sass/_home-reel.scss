@@ -12,18 +12,24 @@ section#reel {
 				margin: 0;	
 				line-height: 1em;
 				@media only screen and (max-width: 600px){
-				    font-size: 4em;
+				    font-size: 3em;
 				}
 			}
 			h3 {
 				margin: 0;
 				line-height: 1.5em;
+				@media only screen and (max-width: 600px){
+				    font-size: 1.5em;
+				}
 				
 			}
 			h4 {
 				font-weight: 300;
 				font-size: 36px;
 				margin: 0;
+				@media only screen and (max-width: 600px){
+				    font-size: 1.5em;
+				}
 				
 			}
 		}

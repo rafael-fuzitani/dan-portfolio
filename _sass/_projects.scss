@@ -62,6 +62,11 @@
 		}
 		.project-load {
 			margin-bottom: 2em;
+			img {
+				@media only screen and (max-width: 760px){
+				width: 100%;
+				}
+			}
 		}
 		iframe {
 			width: 100vw;

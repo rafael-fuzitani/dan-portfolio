@@ -31,7 +31,7 @@ section#about.profile-pic {
 		div.about-me-description {
 		color: white;
 		width: 90%;
-		margin-top: 40px;
+		margin-top: 20px;
 		margin-left: auto;
 		margin-right: auto;
 		@media only screen and (min-width: 760px){
@@ -40,19 +40,27 @@ section#about.profile-pic {
 			float: right;
 			margin-bottom: 0;
 			margin-right: 2em;
+			margin-top: 40px;
 		}
 			h2 {
 				margin: 0;
 				line-height: 1em;
-			}
-			h4 {
-			}
-			.about-subtitle {
-				font-weight: 400;
-			}
-			p {
-				strong {
+				@media only screen and (max-width: 760px){
+					font-size: 18px !important;
 				}
 			}
+			p {
+				@media only screen and (max-width: 760px){
+					font-size: 12px !important;
+				}
+			}
+			
+			.about-subtitle {
+				font-weight: 400;
+				@media only screen and (max-width: 760px){
+					font-size: 12px !important;
+				}
+			}
+			
 		}
 }
