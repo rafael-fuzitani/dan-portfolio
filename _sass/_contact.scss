@@ -6,7 +6,7 @@ section#contact {
 			display: inline-block;
 			margin: 20px;
 			&:hover{
-				path {
+				path, polygon {
 					fill: rgba(0,0,0, 0.5);
 				}
 			}

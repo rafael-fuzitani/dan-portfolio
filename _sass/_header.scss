@@ -1,21 +1,27 @@
 header {
 	#bar{
 	    position:fixed;
-	    top: 38px;
+	    top: 32px;
 	    background-color: #2098d1;
 	    width:0;
 	    height:5px;
 	    z-index: 90000;
 	    transition: width 0.5s ease-in-out; 
+	    @media only screen and (min-width: 760px){
+	    	top: 38px;
+	    }
 	}
 	#bar-back{
 	    position:fixed;
-	    top: 38px;
+	    top: 32px;
 	    background-color: #000;
 	    width: 100%;
 	    height:5px;
 	    z-index: 80000;
 	    transition: width 0.5s ease-in-out;
+	    @media only screen and (min-width: 760px){
+	    	top: 38px;
+	    }
 	}
 }
 
@@ -30,12 +36,15 @@ nav {
 		padding: 0.9em 1em;
 		float: left;
 		color: #fff;
-		font-size: 0.75em;
+		font-size: 0.65em;
 		box-sizing: border-box;
 		border-right: 2px #2098d1 solid;
 		text-align: center;
 		text-decoration: none;
 		font-weight: 300;
+		@media only screen and (min-width: 760px){
+			font-size: 0.75em;
+		}
 	}
 	a[href="#projects2"],
 	a[href="#projects3"],
