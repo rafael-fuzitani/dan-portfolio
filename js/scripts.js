@@ -3,7 +3,13 @@ $(document).ready(function() {
 	var projNumber = $('.section2').length;
 	var bar = $('#bar');
 	var sections = $('section');
-	var projShown = 3;
+
+	if($('.close-proj').css('display') == 'none') {
+		var projShown = 1;
+	}else {
+		var projShown = 3;		
+	}				
+	
 
 	$('#bar').width($(window).width() /(sections.length - (projNumber - 1)));
 
@@ -11,7 +17,6 @@ $(document).ready(function() {
 	$('nav > a').smoothScroll();
 	workLoad();	
 	generalNav();
-
 	$(window).load(function() {
 		var vWidth = $(window).width();
 		var pWidth = vWidth/projShown;
@@ -84,6 +89,8 @@ $(document).ready(function() {
 
 		});
 
+	
+
 
 	//SHOW WORKS
 	function workLoad(){
@@ -149,9 +156,12 @@ $(document).ready(function() {
 	        }
 	        else {
 	        	if($('a[href^=#projects]').hasClass('active')){	
-	        		barIndex = barIndex + projIndex;
+	        		// barIndex = barIndex + projIndex;
 	        		if (nextSection == firstProject) {
 	        			barIndex = projIndex * projShown; 
+	        		}
+	        		else if ( $('.close-proj').css('display') == 'none') {
+	        			barIndex = barIndex + projIndex; 
 	        		}
 	        		else if (nextSection == fullbarProject || nextSection == $('a.projects').eq(-1).attr('href') || nextSection == $('a.projects').last().attr('href') ) {
 	        			barIndex = 2;
@@ -161,19 +171,20 @@ $(document).ready(function() {
 	        			$(this).attr('href', nextSection);
 
 	        		}
+	        		else {
+	        			barIndex = barIndex + projIndex; 
+	        		}
 	        	}
 	        	
 
 	        	else {
 	        		barIndex = barIndex + 1;
-	        		console.log('barIndex ' + barIndex);
 	        	}
 	        }
-	        console.log('desenha barras	');
 	        $('#bar').width(barUnit*(barIndex+1));
 
 	        
-	        console.log('barIndex =' + barIndex);
+	        console.log('barIndex = ' + barIndex);
 	    });
 
 
@@ -202,10 +213,15 @@ $(document).ready(function() {
 	        		barIndex = barIndex - projIndex;
 	        		if(prevSection == $('a.projects').last().attr('href')){
 	        			barIndex = 1;
-	        			prevSection = '#' + $('section#projects2').attr('id');
-	        			$('nav a').removeClass('active');
-	        			$('a[href=#projects2]').addClass('active');
-	        			$(this).attr('href', prevSection);
+	        			if ( $('.close-proj').css('display') == 'none') {
+	        				barIndex = barIndex - projIndex; 
+	        			}else {
+	        				prevSection = '#' + $('section#projects2').attr('id');
+	        				$('nav a').removeClass('active');
+	        				$('a[href=#projects2]').addClass('active');
+	        				$(this).attr('href', prevSection);
+	        			}
+	        			
 	        		}
 	        	}
 	        	else {
@@ -258,7 +274,6 @@ $(document).ready(function() {
 		    }
 		    else {
 		    	$('.prev-section').show(200);
-		    	console.log('Show your self prev');
 		    }
 
 		    if($('nav a').last().hasClass('active')){
@@ -266,7 +281,6 @@ $(document).ready(function() {
 		    }
 		    else {
 		    	$('.next-section').show(200);
-		    	console.log('Show your self next');
 		    }	
 
 
